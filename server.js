@@ -19,7 +19,7 @@ if(process.env.NODE_ENV === "production"){
    res.sendFile(require('path').resolve(__dirname, 'client', 'build' , 'index.html'));
   });
 }
-app.get('/',(req,res)=> res.send("Hello to shopping list"))
+app.get('/items',(req,res)=> res.send("Hello to shopping list"))
 
 const PORT = process.env.PORT || 5000;
 

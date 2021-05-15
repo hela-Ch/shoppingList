@@ -13,12 +13,13 @@ app.use(bodyParser.json());
 //use Routes
 app.use('/items',items);
 
-if(process.nextTick.NODE_ENV === "production"){
+if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build"));
   app.get('*',(req,res) => {
    res.sendFile(require('path').resolve(__dirname, 'client', 'build' , 'index.html'));
   });
 }
+app.get('/',(req,res)=> res.send("Hello to shopping list"))
 
 const PORT = process.env.PORT || 5000;
 

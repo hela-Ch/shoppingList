@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+}
+
+h1 {
+  text-align: center;
+  background-color: rgb(14, 14, 129);
+  color:cornsilk;
+}
+.addItem{
+  margin:20px;
+  text-align:center;
+}
+
+.itemList{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  width:200px;
+
+  margin: 30px auto;
+  
+}
+li{
+  display:flex;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+img {
+  width:15px;
+  height:15px;
+  margin-bottom:20px;
+}

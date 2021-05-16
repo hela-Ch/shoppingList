@@ -14,7 +14,7 @@ function App() {
  
   useEffect(() => {
   async function fetchData() {
-   const res = await fetch("http://localhost:5000/items");
+   const res = await fetch("https://frozen-savannah-77559.herokuapp.com/items");
    const data = await res.json();
    setItems(data);
   }
@@ -25,7 +25,7 @@ function App() {
     //items.splice(itemIndex,1);
     //const newItemList  =[...items];
     //setItems(newItemList);
-     fetch(`http://localhost:5000/items/${itemIndex}`, {
+     fetch(`https://frozen-savannah-77559.herokuapp.com/items/${itemIndex}`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

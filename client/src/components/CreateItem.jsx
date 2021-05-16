@@ -12,7 +12,7 @@ const CreateItem = ({addItem}) => {
     const handleSubmit = (event)=>{
        event.preventDefault();
        
-        fetch("http://localhost:5000/items", {
+        fetch("https://frozen-savannah-77559.herokuapp.com/items", {
              headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

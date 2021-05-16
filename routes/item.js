@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
     .then((items) => {
         console.log("hi from get methood");
         res.send(items)})
+    .catch((error) => res.status(404).json({success:false}))  
 });
 
 router.post('/', (req, res) => {
@@ -20,6 +21,7 @@ router.post('/', (req, res) => {
     .then((item) => {
         console.log("hello from post method");
         res.send(item)})
+    .catch((error) => res.status(404).json({success:false}))   
 })
 router.delete('/:id', (req,res) => {
     Item.findById(req.params.id)

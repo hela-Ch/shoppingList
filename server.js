@@ -26,11 +26,6 @@ mongoose
 .catch((error) => console.log(`an error has occured : ${error}`))
 
 
-/*app.all('*', (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://localhost:3000");
-    next();
-});*/
-
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.resolve(_dirname,"client/build")));
   app.get('*',(req,res) => {

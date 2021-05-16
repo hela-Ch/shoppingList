@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require("path");
 const db = require ('./config/keys').mongoURI;
 
 
@@ -14,9 +15,9 @@ app.use(bodyParser.json());
 app.use('/items',items);
 
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static("client/build"));
+  app.use(express.static(path.resolve(_dirname,"client/build")));
   app.get('*',(req,res) => {
-   res.sendFile(require('path').resolve(__dirname, 'client', 'build' , 'index.html'));
+   res.sendFile(path.resolve(__dirname, 'client', 'build' , 'index.html'));
   });
 }
 //app.get('/items',(req,res)=> res.send("Hello to shopping list"))
@@ -30,9 +31,9 @@ mongoose
 .catch((error) => console.log(`an error has occured : ${error}`))
 
 
-app.all('*', (req, res, next) => {
+/*app.all('*', (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "https://localhost:3000");
     next();
-});
+});*/
 //run server
 app.listen (PORT,()=> console.log(`listening to server on port ${PORT}`))
